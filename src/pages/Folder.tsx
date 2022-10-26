@@ -21,24 +21,24 @@ function Folder() {
 
   return (
     <>
+      <CreateActions onlyFile={true} />
 
-    <CreateActions onlyFile={true} />
-
-<div className="flex flex-wrap ">      
-      {files &&
-        files
-          .filter((file) => file.folderId == folderId)
-          .map((file) => (
-            <File
-              remove={handleRemoveFile}
-              update={handleUpdateFile}
-              file={file}
-              key={file.id}
-            />
-          ))}
-    </div>
+      <div className="flex flex-wrap ">
+        {files &&
+          files
+            .filter(
+              (file) => file.folderId == folderId && file.isActive === true
+            )
+            .map((file) => (
+              <File
+                remove={handleRemoveFile}
+                update={handleUpdateFile}
+                file={file}
+                key={file.id}
+              />
+            ))}
+      </div>
     </>
-    
   );
 }
 

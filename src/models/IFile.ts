@@ -1,6 +1,7 @@
 export interface IFile {
-    id: number | null | string | undefined;
-    folderId: number | null | string | undefined;
-    title: string;
-    body: string;
+  id: number ;
+  folderId: number | null | string | undefined;
+  title: string;
+  body: string | undefined;
+  isActive: boolean;
 }

@@ -4,7 +4,6 @@ import { IFolder } from "../models/IFolder";
 import { folderAPI } from "../services/FolderService";
 
 interface CreateFolderProps {
-  //   onCreate: (folder: IFolder) => void;
   close: () => void;
 }
 
@@ -18,7 +17,7 @@ function CreateFolder({ close }: CreateFolderProps) {
     event.preventDefault();
     setError("");
 
-    await createFolder({ title, body: title } as IFolder);
+    await createFolder({ title, body: title, isActive: true } as IFolder);
 
     close();
   };
@@ -37,7 +36,6 @@ function CreateFolder({ close }: CreateFolderProps) {
         onChange={changeHandler}
       />
 
-      {/* {error && <ErrorMessage error={error} />} */}
 
       <button
         type="submit"

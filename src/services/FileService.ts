@@ -15,10 +15,9 @@ export const fileAPI = createApi({
       }),
       providesTags: (result) => ["File"],
     }),
-    fetchFileById: build.query<IFile, number | undefined | null |string>({
+    fetchFileById: build.query<IFile, number | undefined | null | string>({
       query: (id) => ({
         url: `/files/${id}`,
-        
       }),
       providesTags: (result) => ["File"],
     }),

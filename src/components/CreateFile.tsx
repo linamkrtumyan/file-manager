@@ -3,13 +3,11 @@ import { IFile } from "../models/IFile";
 import { fileAPI } from "../services/FileService";
 import { useParams } from "react-router-dom";
 
-
 interface CreateFileProps {
   close: () => void;
 }
 
 function CreateFolder({ close }: CreateFileProps) {
-
   let { folderId } = useParams();
 
   const [createFile, {}] = fileAPI.useCreateFileMutation();
@@ -21,7 +19,12 @@ function CreateFolder({ close }: CreateFileProps) {
     event.preventDefault();
     setError("");
 
-    await createFile({ title, body: "", folderId:folderId ? folderId : null } as IFile);
+    await createFile({
+      title,
+      body: "",
+      folderId: folderId ? folderId : null,
+      isActive: true,
+    } as IFile);
 
     close();
   };
@@ -40,7 +43,6 @@ function CreateFolder({ close }: CreateFileProps) {
         onChange={changeHandler}
       />
 
-      {/* {error && <ErrorMessage error={error} />} */}
 
       <button
         type="submit"

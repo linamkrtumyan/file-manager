@@ -2,70 +2,85 @@
   "folders": [
     {
       "id": 1,
-      "title": "test 1",
-      "body": "typicode"
+      "title": "test 1 folder",
+      "body": "typicode",
+      "isActive": true
     },
     {
       "id": 2,
-      "title": "test 2",
-      "body": "typicode"
+      "title": "test 2 folder",
+      "body": "typicode",
+      "isActive": true
     },
     {
-      "title": "a",
-      "body": "a",
-      "id": 3
+      "title": "test 3 folder",
+      "body": "test 3 folder",
+      "id": 3,
+      "isActive": true
     },
     {
-      "title": "gjm",
-      "body": "gjm",
+      "title": "test 4 folder ",
+      "body": "test 4 folder ",
+      "isActive": false,
       "id": 4
-    },
-    {
-      "title": "csdcsd",
-      "body": "csdcsd",
-      "id": 5
     }
   ],
   "files": [
     {
-      "id": 2,
-      "title": "test 2",
+      "title": "test 1 file",
+      "body": "lorem ipsum morem 123 upd",
       "folderId": null,
-      "body": "lores repellendus, unde eveniet soluta velit laborum maiores dolorum laboriosam eos, nostrum sit ab libero perferendis "
+      "id": 8,
+      "isActive": true
     },
     {
-      "id": 4,
-      "title": "test 4",
-      "folderId": null,
-      "body": "typicode"
-    },
-    {
-      "id": 5,
-      "title": "test 5 upd",
-      "folderId": 1,
-      "body": "typicode"
-    },
-    {
-      "title": "w",
-      "body": "w",
-      "folderId": null,
-      "id": 6
-    },
-    {
-      "title": "sss",
-      "body": "sss",
+      "title": "test 1 folder 1 file",
+      "body": "",
       "folderId": "1",
-      "id": 7
+      "id": 9,
+      "isActive": true
     },
     {
-      "title": "gfnf",
-      "body": "gfnf",
+      "title": "test1 folder 2 file",
+      "body": "",
+      "folderId": "1",
+      "id": 10,
+      "isActive": true
+    },
+    {
+      "title": "test 2 file ",
+      "body": "lorem ipsum",
       "folderId": null,
-      "id": 8
+      "id": 12,
+      "isActive": true
+    },
+    {
+      "title": "zz",
+      "body": "",
+      "folderId": "2",
+      "isActive": true,
+      "id": 13
+    },
+    {
+      "title": "xx",
+      "body": "",
+      "folderId": "2",
+      "isActive": true,
+      "id": 14
+    },
+    {
+      "title": ";ljlk",
+      "body": "",
+      "folderId": "3",
+      "isActive": true,
+      "id": 15
+    },
+    {
+      "title": "fold 4 file 1 upd",
+      "body": "sdgvsfg",
+      "folderId": "4",
+      "isActive": true,
+      "id": 16
     }
-  ],
-  "comments": [],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

@@ -9,7 +9,7 @@ import { IFolder } from "../models/IFolder";
 import { fileAPI } from "../services/FileService";
 import { folderAPI } from "../services/FolderService";
 
-function Home() {
+function RecycleBin() {
   const [limit, setLimit] = useState(100);
   const {
     data: folders,
@@ -47,39 +47,32 @@ function Home() {
 
   return (
     <>
-      <CreateActions />
-      {isLoadingFile || isLoading ? (
-        <Loading />
-      ) : (
-        <div className="flex flex-wrap ">
-          {folders &&
-            folders
-              .filter((folder) => folder.isActive === true)
-              .map((folder) => (
-                <Folder
-                  remove={handleRemoveFolder}
-                  update={handleUpdateFolder}
-                  folder={folder}
-                  key={folder.id}
-                />
-              ))}
-          {files &&
-            files
-              .filter(
-                (file) => file.folderId === null && file.isActive === true
-              )
-              .map((file) => (
-                <File
-                  remove={handleRemoveFile}
-                  update={handleUpdateFile}
-                  file={file}
-                  key={file.id}
-                />
-              ))}
-        </div>
-      )}
+      <div className="flex flex-wrap ">
+        {folders &&
+          folders
+            .filter((folder) => folder.isActive === false)
+            .map((folder) => (
+              <Folder
+                remove={handleRemoveFolder}
+                update={handleUpdateFolder}
+                folder={folder}
+                key={folder.id}
+              />
+            ))}
+        {files &&
+          files
+            .filter((file) => file.isActive === false)
+            .map((file) => (
+              <File
+                remove={handleRemoveFile}
+                update={handleUpdateFile}
+                file={file}
+                key={file.id}
+              />
+            ))}
+      </div>
     </>
   );
 }
 
-export default Home;
+export default RecycleBin;

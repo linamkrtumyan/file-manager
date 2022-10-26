@@ -1,17 +1,16 @@
-import React, {useContext, useState} from 'react'
-import { ModalContext } from '../context/ModalContext';
-import CreateFolder from './CreateFolder';
-import CreateFile from './CreateFile';
-import Modal from './Modal';
+import React, { useContext, useState } from "react";
+import { ModalContext } from "../context/ModalContext";
+import CreateFolder from "./CreateFolder";
+import CreateFile from "./CreateFile";
+import Modal from "./Modal";
 
-function CreateActions({onlyFile = false}) {
-    const { modal, open, close } = useContext(ModalContext);
-    const [folder, setFolder] = useState(false);
+function CreateActions({ onlyFile = false }) {
+  const { modal, open, close } = useContext(ModalContext);
+  const [folder, setFolder] = useState(false);
 
-   
   return (
     <>
-     {modal && (
+      {modal && (
         <Modal
           title={folder ? "Create new folder" : "Create new file"}
           onClose={() => close()}
@@ -24,9 +23,8 @@ function CreateActions({onlyFile = false}) {
         </Modal>
       )}
       <div className="flex">
-        {
-            !onlyFile &&
-            <button
+        {!onlyFile && (
+          <button
             onClick={() => {
               setFolder(true);
               open();
@@ -35,8 +33,8 @@ function CreateActions({onlyFile = false}) {
           >
             Add new folder
           </button>
-        }
-      
+        )}
+
         <button
           onClick={() => {
             setFolder(false);
@@ -47,10 +45,8 @@ function CreateActions({onlyFile = false}) {
           Add new file
         </button>
       </div>
-    
     </>
-   
-  )
+  );
 }
 
-export default CreateActions
+export default CreateActions;
