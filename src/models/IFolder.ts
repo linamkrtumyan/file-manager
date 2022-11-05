@@ -3,4 +3,5 @@ export interface IFolder {
   title: string;
   body: string;
   isActive: boolean;
+  parentFolderId: number | null | undefined
 }

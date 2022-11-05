@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 
 import { IFolder } from "../models/IFolder";
 import { folderAPI } from "../services/FolderService";
@@ -7,17 +8,21 @@ interface CreateFolderProps {
   close: () => void;
 }
 
+
 function CreateFolder({ close }: CreateFolderProps) {
   const [createFolder, {}] = folderAPI.useCreateFolderMutation();
+  let { folderId } = useParams();
 
   const [title, setValue] = useState("");
   const [error, setError] = useState("");
+
+  console.log(folderId,"folder id for folder")
 
   const submitHandler = async (event: React.FormEvent) => {
     event.preventDefault();
     setError("");
 
-    await createFolder({ title, body: title, isActive: true } as IFolder);
+    await createFolder({ title, body: title, isActive: true, parentFolderId: folderId ? folderId : null } as IFolder);
 
     close();
   };

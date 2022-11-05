@@ -7,6 +7,8 @@ import {
   MdRestore,
 } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
 
 interface FolderProps {
   folder: IFolder;
@@ -16,6 +18,7 @@ interface FolderProps {
 
 function Folder({ folder, remove, update }: FolderProps) {
   const history = useNavigate();
+  let { folderId } = useParams();
 
   const [updName, setUpdName] = useState(false);
   const [title, setTitle] = useState(folder.title);
@@ -61,7 +64,16 @@ function Folder({ folder, remove, update }: FolderProps) {
   };
 
   const showContent = () => {
-    history(`${folder.id}`);
+    if(folderId) {
+      console.log("if")
+      history(`/${folder.id}`, { replace: true })
+      // history(0)
+      // navigate("/login", { replace: true })
+    }else {
+      console.log("else")
+         history(`${folder.id}`);
+    }
+ 
   };
 
   return (

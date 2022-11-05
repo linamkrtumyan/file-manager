@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import Breadcrumbs from "../components/Breadcrumbs";
 import CreateActions from "../components/CreateActions";
 import File from "../components/File";
 import Folder from "../components/Folder";
@@ -47,6 +48,8 @@ function Home() {
 
   return (
     <>
+
+<Breadcrumbs/>
       <CreateActions />
       {isLoadingFile || isLoading ? (
         <Loading />
@@ -54,7 +57,7 @@ function Home() {
         <div className="flex flex-wrap ">
           {folders &&
             folders
-              .filter((folder) => folder.isActive === true)
+              .filter((folder) => folder.isActive === true && folder.parentFolderId === null)
               .map((folder) => (
                 <Folder
                   remove={handleRemoveFolder}
